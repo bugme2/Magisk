@@ -1,14 +1,12 @@
 diff --git a/native/src/core/module.cpp b/native/src/core/module.cpp
-index b5b6a0dca..0954944c8 100644
+index 94dea6c8d..c813c605e 100644
 --- a/native/src/core/module.cpp
 +++ b/native/src/core/module.cpp
-@@ -286,9 +286,7 @@ void load_modules() {
+@@ -283,7 +283,7 @@ void load_modules() {
  
      if (!system->is_empty()) {
          // Handle special read-only partitions
--        for (const char *part : { "/vendor", "/vendor_dlkm","/product",
--                                  "/system_ext", "/system_dlkm",
--                                  "/odm", "/odm_dlkm" }) {
+-        for (const char *part : { "/vendor", "/product", "/system_ext" }) {
 +        for (const char *part : { "/vendor", "/product", "/system_ext", "/odm", "/my_bigball", "/my_carrier", "/my_company", "/my_engineering", "/my_heytap", "/my_manifest", "/my_preload", "/my_product", "/my_region", "/my_stock", "/vendor_dlkm" }) {
              struct stat st{};
              if (lstat(part, &st) == 0 && S_ISDIR(st.st_mode)) {
